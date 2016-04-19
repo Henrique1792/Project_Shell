@@ -1,10 +1,16 @@
-#CC = gcc
-#CPP_FLAGS = -I -Wall c=89
-#C_FLAGS: -c
-#%.o: %.c
-	#$(CC) $(C_FLAGS) $@
+CC = gcc
+OBJECTS: utils.o main.o
+CPP_FLAGS = -I -Wall -Werror -std=c89 
+C_FLAGS: 
 
-#all:
+
+%.o: %.c
+	$(CC) -c  $<
+
+all:
+	$(CC) $(CPP_FLAGS) $(OBJECTS) -o teste
+
+
 
 
 run:
