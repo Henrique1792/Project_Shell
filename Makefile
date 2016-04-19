@@ -10,9 +10,6 @@ C_FLAGS:
 all:
 	$(CC) $(CPP_FLAGS) $(OBJECTS) -o teste
 
-
-
-
 run:
 	./teste
 
