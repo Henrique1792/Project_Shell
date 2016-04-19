@@ -2,10 +2,7 @@
 
 
 char *get_line(){
-  char *rt;
-  char chk='a';
-  int i=0;
-
+  char *rt=NULL; char chk='a'; int i=0; 
   do{
     chk=getchar();
     rt=(char *)realloc(rt,(i+1)*sizeof(char));
@@ -13,7 +10,5 @@ char *get_line(){
 
   }while(chk!='\n');
   rt[--i]='\0';
-  
-  
   return rt;
 }
