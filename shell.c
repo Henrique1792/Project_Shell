@@ -3,7 +3,7 @@
 
 
 
-int decode(char ** cmd){
+int decode(char **cmd){
   pid_t pid;
   int status;
   

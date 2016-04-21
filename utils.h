@@ -1,7 +1,7 @@
 #ifndef UTILS_H_
 #define UTILS_H_
 
-#define SPACEBAR ' '
+#define TOK_DELIM " \t\n"
 
 #include <unistd.h>
 #include <errno.h>

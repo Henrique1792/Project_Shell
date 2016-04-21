@@ -1,5 +1,5 @@
 CC = gcc
-OBJECTS: utils.o main.o
+OBJECTS: utils.o parser.o main.o
 CPP_FLAGS = -I -Wall -Werror -std=c89
 C_FLAGS: 
 
