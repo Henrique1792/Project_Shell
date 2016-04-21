@@ -3,19 +3,20 @@
 
 
 char **Args(char *command, int *nargs){
-  char **rt;
-  char *tmp;
-  int i,flag=0;
+  char **rt=NULL;
+  char *tmp=NULL;
+  int i=0,flag=0;
   
-  tmp=strtok(command, TOK_DELIM);
+  tmp=strtok(command,TOK_DELIM);
+  if(tmp==NULL) flag=1;
   while(!flag){
-    rt=(char**)malloc(i+1 *sizeof(char *));
-    rt[i++]=tmp;
-    *nargs=i;
+    rt=(char **)realloc(rt,(i+1)*sizeof(char *));
+    rt[i]=(char *)malloc(sizeof(tmp));
+    strcpy(rt[i++],tmp);
     tmp=strtok(NULL,TOK_DELIM);
-    if(tmp==NULL)
-      flag=1;
+    if(tmp==NULL) flag=1;
   }
-  
+ 
+ *nargs=i; 
   return rt;  
 }

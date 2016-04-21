@@ -1,20 +1,17 @@
 CC = gcc
-OBJECTS: utils.o parser.o main.o
-CPP_FLAGS = -I -Wall -Werror -std=c89
-C_FLAGS: 
-
+CPP_FLAGS = -I. -Wall -std=c89
+OBJS = utils.o parser.o main.o
 
 %.o: %.c
-	$(CC) -c  $<
+	$(CC) -c $<
 
-all:
-	$(CC) $(CPP_FLAGS) $(OBJECTS) -o teste
+all: $(OBJS)
+	$(CC) $(CPP_FLAGS) $^ -o teste
 
 run:
-	./teste
-
-
+	@./teste
 
 .PHONY: clean
+
 clean:
-	rm -rf *.o
+	@rm -rf *.o

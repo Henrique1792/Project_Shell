@@ -1,5 +1,6 @@
 #ifndef SHELL_H_
 #define SHELL_H_
+#include "shell.h"
 #include "utils.h"
 
 #define MAX_ARGS 1024
