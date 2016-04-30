@@ -1,0 +1,32 @@
+Hello!
+
+
+Welcome to shue! (We didn't have a better name at the time).
+
+This file will help you to use this project.
+
+
+1. Clone it 
+ Run  git clone https://github.com/Henrique1792/Project_Shell command.
+
+2: Build it
+ Run make command.
+
+3: Execute it
+ Run make run command;
+or
+  run ./shue command.
+
+3.1 - Usability
+  While you're using shue, type default linux commands. It'll work fine. Trust me =)
+
+3.2 - Quitting
+  while running shue, type "quit", and the shell finalizes =) .
+3.2 - Appendix
+  Some functions still have problems (like pipe and redirect output), so I warn you to stay away from them, at least now.
+
+3.3 - Clean dependencies
+  Run make clean (BE CAREFUL WHEN YOU WRITE THIS COMMAND, TRULLY).
+
+
+Thank you for reading!
