@@ -1,32 +1,43 @@
 #include "shell.h"
+#include "parser.h"
 
-
-
-int decode(char **cmd){
-  pid_t pid;
-  int status;
-  
-  pid=fork();
-  
-
-}
-
+#include <sys/types.h>
+#include <sys/wait.h>
 
 void shell_loop(){
   char *line=NULL;
   char **tgt;
-  int exe; 
+  int exe_members, pid,status, execution; 
+  
   while(1){
-  printf(">> ");
-  line=get_line();
-  //Parse command here! - need 2 think how
-  /*exe = decode()*/
-  
+    printf(">> ");
+    line=get_line();
     
-  
-  free(line);
+    if(EmptyCmd(line)){
+      tgt=Args(line,&exe_members);
+      
+      if(NullCmd(tgt[0])){
+        
+        KillCmd(tgt[0])
+        
+        pid=fork();
+        FATAL_ERROR(pid<0);
+      
+        if(pid>0){
+          wait(&status);
+        }
+        else{
+          execvp(tgt[0],tgt);
+          exit(EXIT_FAILURE);
+        }
+      
+      
+      }
+    }
+    
+    free(line);
   }
-   
+  printf("See ya\n");
 }
 
 void shell_init(){

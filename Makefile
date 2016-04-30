@@ -1,17 +1,17 @@
 CC = gcc
 CPP_FLAGS = -I. -Wall -std=c89
-OBJS = utils.o parser.o main.o
+OBJS = utils.o parser.o shell.o main.o
 
 %.o: %.c
 	$(CC) -c $<
 
 all: $(OBJS)
-	$(CC) $(CPP_FLAGS) $^ -o teste
+	$(CC) $(CPP_FLAGS) $^ -o shue
 
 run:
-	@./teste
+	./shue
 
 .PHONY: clean
 
 clean:
-	@rm -rf *.o
+	rm -rf *.o shue
